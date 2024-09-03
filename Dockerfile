@@ -2,12 +2,13 @@ FROM python:3.8-buster
 
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /django
+RUN pip install --upgrade pip
 
-COPY requirements.txt requirements.txt
+COPY . /app
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-COPY . .
 
-CMD python manage.py runserver 0.0.0.0:8000
+COPY ./entrypoint.sh /
+ENTRYPOINT ["sh", "/entrypoint.sh"]

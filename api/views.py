@@ -55,6 +55,7 @@ class DetailUserView(GenericAPIView):
         serializer = self.get_serializer(request.user)
         return Response(serializer.data)
 
+
 class DetailReviewView(RetrieveAPIView):
     serializer_class = ReviewSerializer
     authentication_classes = []
