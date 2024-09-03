@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
 # from cognito_auth.utils import CognitoAuthenticationBackend
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -143,11 +145,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AWS_ACCESS_KEY_ID = 'AKIAYFD4RDLIUIQW3Z7L'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'barber-shop-bucket'
+AWS_ACCESS_KEY_ID = os.getenv('AWS_S3_CLIENT_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_S3_CLIENT_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_DJANGO_FILES_BUCKET_NAME')
 AWS_S3_SIGNATURE_NAME = 's3v4'
-AWS_S3_REGION_NAME = 'eu-west-3'
+AWS_S3_REGION_NAME = os.getenv('AWS_REGION')
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_VERITY = True
