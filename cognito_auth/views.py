@@ -1,4 +1,6 @@
 import os
+
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
@@ -103,7 +105,8 @@ class SignupView(GenericAPIView):
 
 
 class TestView(APIView):
-    permission_classes = [IsAuthenticated]
+    authentication_classes = []
 
     def get(self, request):
-        return HttpResponse(request.user)
+        User.objects.get(username='test')
+        return HttpResponse(status=status.HTTP_200_OK)
