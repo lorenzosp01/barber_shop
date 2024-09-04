@@ -27,6 +27,7 @@ type UserSimulationStats struct {
 	TimeStdDev     float64
 }
 
+const startState = "start"
 func NewUserSimulation(username string, password string) *UserSimulation {
 
 	return &UserSimulation{
@@ -47,7 +48,7 @@ func log(args ...any) {
 	}
 }
 
-const startState = "start"
+
 const uploadReviewState = "uploadReview"
 const listPersonalReviewsState = "listPersonalReviews"
 const listAllReviewsState = "listAllReviews"

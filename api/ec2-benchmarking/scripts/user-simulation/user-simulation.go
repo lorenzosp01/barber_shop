@@ -12,7 +12,7 @@ func main() {
 	// A single instance of the script runs 20 users
 	users := make([]*lib.UserSimulation, parallelUsers)
 	for i := 0; i < parallelUsers; i++ {
-		users[i] = lib.NewUserSimulation(fmt.Sprintf("losp0401@gmail.com%d", i), "Lorenzo01@")
+		users[i] = lib.NewUserSimulation("losp0401@gmail.com", "Lorenzo01@")
 	}
 
 	// Start the user simulations, in background
