@@ -108,5 +108,5 @@ class TestView(APIView):
     authentication_classes = []
 
     def get(self, request):
-        User.objects.get(username='test')
-        return HttpResponse(status=status.HTTP_200_OK)
+        User.objects.get(username='admin')
+        return Response(status=status.HTTP_200_OK, data={'message': 'Hello, world!'})
