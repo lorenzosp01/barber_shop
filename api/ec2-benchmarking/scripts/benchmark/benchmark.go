@@ -11,7 +11,7 @@ import (
 )
 
 const totalSeconds = 60
-const targetUrl = "/healthcheck"
+const targetUrl = "/api/list-reviews"
 
 var requestTimes []int
 
