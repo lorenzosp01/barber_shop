@@ -19,7 +19,7 @@ type Payload struct {
 	rating   int
 }
 
-const defaultEndpoint = "http://localhost:8000"
+const defaultEndpoint = "http://BarberShopBackendELB-1038341072.us-east-1.elb.amazonaws.com"
 
 const defaultTimeout = 1 * time.Second
 
